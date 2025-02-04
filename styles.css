@@ -1,0 +1,678 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Fundo pastel claro */
+    text-align: left; /* Alinhamento à esquerda */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé fique no final da página */
+}
+
+/* Estilos para o cabeçalho */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que o menu fique acima do conteúdo */
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Linha horizontal sutil */
+    overflow: hidden; /* Impede que a imagem ultrapasse a barra de menu */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente para o menu */
+}
+
+/* Pseudo-elemento para a imagem de fundo */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/background-logo.png'); /* Imagem de fundo */
+    background-size: cover; /* Cobrir toda a área */
+    background-position: center; /* Centralizar a imagem */
+    opacity: 0.8; /* Opacidade de 80% */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+/* Estilos para o logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: rgba(255, 255, 255, 0); /* Fundo branco semi-transparente para o logo */
+    border-radius: 10px; /* Bordas arredondadas */
+    margin: 0 auto; /* Centraliza o logo */
+    max-width: 300px; /* Largura máxima do logo */
+    position: relative; /* Garante que o logo fique acima da imagem de fundo */
+}
+
+.logo-img {
+    max-width: 150px; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Estilos para o menu */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto com opacidade para o menu */
+    padding: 10px 0; /* Espaçamento interno */
+    position: relative; /* Garante que o menu fique acima da imagem de fundo */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+/* Estilos para o conteúdo principal */
+main {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique abaixo do menu */
+    padding-top: 20px; /* Espaçamento para evitar sobreposição com o menu */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 120px; /* Reduz o tamanho da imagem em telas menores */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 100px; /* Tamanho ainda menor para dispositivos móveis */
+    }
+}
+/* Estilos para o menu */
+nav {
+    background-color: #000; /* Fundo preto para o menu */
+    padding: 10px 0; /* Espaçamento interno */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(255, 0, 0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 120px; /* Reduz o tamanho da imagem em telas menores */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 100px; /* Tamanho ainda menor para dispositivos móveis */
+    }
+}
+
+/* Menu de navegação */
+nav ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(255, 0, 0);
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* Seções */
+section {
+    padding: 40px 20px;
+    background-color: #ffffff; /* Fundo branco para as seções */
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1, h2, h3 {
+    color: #ff0000; /* Títulos em dourado */
+    transition: text-shadow 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra preta ao passar o mouse */
+}
+
+/* Estilos para a seção de serviços */
+#servicos {
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o título */
+}
+
+#servicos h2 {
+    color: #ff0000; /* Título em dourado */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-size: 2rem;
+}
+
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Quadros responsivos */
+    gap: 20px; /* Espaçamento entre os quadros */
+    justify-items: center; /* Centraliza os quadros horizontalmente */
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o contêiner */
+}
+
+.servico {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    max-width: 300px; /* Largura máxima para evitar quadros muito largos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left; /* Alinha o conteúdo dos quadros à esquerda */
+}
+
+.servico:hover {
+    transform: translateY(-10px);
+}
+
+.servico h3 {
+    color: #ff0000; /* Título em dourado */
+    margin-bottom: 10px;
+}
+
+.servico p {
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .servicos-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Quadros menores em telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    .servicos-container {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
+
+/* Estilos para a seção de galeria */
+#galeria {
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Quadros responsivos */
+    gap: 20px; /* Espaçamento entre os quadros */
+    justify-items: center; /* Centraliza os quadros horizontalmente */
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Largura máxima para evitar quadros muito largos */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    display: block;
+}
+
+.gallery-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo claro sobre a imagem */
+    transition: opacity 0.3s ease;
+    opacity: 1; /* Fundo visível por padrão */
+}
+
+.gallery-item:hover::before {
+    opacity: 0; /* Fundo desaparece ao passar o mouse */
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Formulário de Contato */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff0000;
+    color: #000;
+}
+
+/* Rodapé */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Garante que o rodapé fique no final */
+}
+
+/* Redes Sociais */
+.redes-sociais a {
+    color: #ff0000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.redes-sociais a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .servicos-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Quadros menores em telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    .servicos-container {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+}
+/* Estilos para o logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    max-width: 150px; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 120px; /* Reduz o tamanho da imagem em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 100px; /* Tamanho ainda menor para dispositivos móveis */
+    }
+}
+/* Estilos para a seção Home */
+#home {
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.quem-somos {
+    max-width: 800px;
+    margin: 0 auto 40px; /* Centraliza e adiciona margem abaixo */
+}
+
+.quem-somos h2 {
+    color: #ff0000; /* Título em dourado */
+    margin-bottom: 20px;
+}
+
+.quem-somos p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o contêiner do vídeo */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.video:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .quem-somos {
+        padding: 0 20px;
+    }
+
+    .video-container {
+        max-width: 100%;
+    }
+}
+/* Estilos para a seção Quem Somos */
+#quem-somos {
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o título */
+}
+
+#quem-somos h2 {
+    color: #ff0000; /* Título em dourado */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-size: 2rem;
+}
+
+.quem-somos-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o box */
+    text-align: left; /* Alinha o conteúdo à esquerda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quem-somos-box p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.quem-somos-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quem-somos-box ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.quem-somos-box ul li::before {
+    content: "•";
+    color: #ff0000; /* Marcador em dourado */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .quem-somos-box {
+        padding: 20px;
+    }
+
+    .quem-somos-box p {
+        font-size: 1rem;
+    }
+
+    .quem-somos-box ul li {
+        font-size: 1rem;
+    }
+}
+/* Estilos para a seção Contato */
+#contato {
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o título */
+}
+
+#contato h2 {
+    color: #ff0000; /* Título em dourado */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-size: 2rem;
+}
+
+.contato-form {
+    max-width: 500px;
+    margin: 0 auto; /* Centraliza o formulário */
+    text-align: left; /* Alinha o conteúdo do formulário à esquerda */
+}
+
+.contato-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contato-form input, .contato-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contato-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 150px; /* Altura mínima */
+}
+
+.contato-form button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contato-form button:hover {
+    background-color: #ff0000;
+    color: #000;
+}
+
+.redes-sociais {
+    margin-top: 40px; /* Espaço acima dos links de redes sociais */
+}
+
+.redes-sociais a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: #ff0000; /* Cor dourada ao passar o mouse */
+}
+
+/* Ícones das redes sociais */
+.redes-sociais a i {
+    margin-right: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-form {
+        padding: 0 20px;
+    }
+
+    .redes-sociais a {
+        font-size: 1rem;
+    }
+}
